@@ -1,15 +1,17 @@
 import { ReactNode, createContext, useContext, useEffect, useState } from "react";
 import { api } from '../services';
+import { toast } from "sonner";
 
 interface UserProps {
-  user: {
-    id: number
-    name: string
-    password: string
-    isAdmin: boolean
-    created_at: string
-    updated_at: string
-  },
+  id: number
+  name: string
+  email: string
+  is_active: boolean
+  avatar: string | null
+  type: string
+  created: string
+  modified: string
+  role: string
 }
 
 interface dataTypes {
@@ -47,6 +49,7 @@ function AuthProvider({ children }: AuthContextProviderProps) {
           }
         }
       );
+
       const { user, tokens } = response.data;
 
       localStorage.setItem("@applogin:user", JSON.stringify(user));
@@ -56,14 +59,14 @@ function AuthProvider({ children }: AuthContextProviderProps) {
 
       setData({ user, token: tokens });
 
-      alert("Logado com sucesso!")
+      toast.success("Logado com sucesso!")
       
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if(error.response) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.detail);
       } else {
-        alert("Não foi possível logar.")
+        toast.error("Não foi possível logar.")
       }
     }
   }
