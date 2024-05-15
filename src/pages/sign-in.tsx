@@ -2,6 +2,7 @@ import { Field, Form, Formik } from "formik"
 import * as Yup from 'yup';
 
 import b2bitLogo from "../assets/b2bit-logo.png"
+import { useAuth } from "../hooks/auth";
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -11,9 +12,11 @@ const SignupSchema = Yup.object().shape({
 });
 
 export function SignIn() {
+  const { SignIn } = useAuth()
+
   return (
     <div className="bg-[#FAFAFA] h-screen flex items-center justify-center">
-      <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-lg rounded-2xl">
+      <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl">
 
         <header className="flex justify-center">
           <img src={b2bitLogo}  className="h-28" alt="" />
@@ -27,7 +30,7 @@ export function SignIn() {
             }}
             validationSchema={SignupSchema}
             onSubmit={(values) => {
-              console.log(values)
+              SignIn(values)
             }}
           >
             {({ errors, touched, isValid }) => (
