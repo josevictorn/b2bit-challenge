@@ -9,7 +9,7 @@ import { enablwMSW } from './mocks/index.ts'
 enablwMSW().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-      <Toaster position='top-right' expand={false} richColors />
+      <Toaster position='top-right' expand={false} richColors closeButton />
       <AuthProvider>
         <Routes />
       </AuthProvider>

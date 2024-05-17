@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 
 import b2bitLogo from "../assets/b2bit-logo.png"
 import { useAuth } from "../hooks/auth";
+import { Button } from "../components/button";
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -74,15 +75,11 @@ export function SignIn() {
                   {errors.password && touched.password ? <span className="text-red-500 text-xs font-semibold">{errors.password}</span> : null}
                 </div>
 
-                <div>
-                  <button
-                    type="submit"
-                    disabled={!isValid}
-                    className="flex w-full justify-center rounded-md bg-blue-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-900 disabled:bg-zinc-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950"
-                  >
-                    Sign in
-                  </button>
-                </div>
+                <Button
+                  title="Sign in"
+                  type="submit"
+                  disabled={!isValid}
+                />
               </Form>
             )}
           </Formik>
