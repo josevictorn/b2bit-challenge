@@ -25,7 +25,7 @@ export function Profile() {
       <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl space-y-6">
         <header className="flex flex-col justify-center items-center gap-2">
           <h2 className="text-sm font-semibold leading-6 text-gray-900">Profile picture</h2>
-          <img src={user.avatar ? user.avatar : avatarPlaceholder} className="h-14 w-14 rounded-lg " alt={`Avatar de ${user.name}`} />
+          <img src={user.avatar ? user.avatar.low : avatarPlaceholder} className="h-14 w-14 rounded-lg object-cover" alt={`Avatar de ${user.name}`} />
         </header>
 
         <main className="space-y-4">

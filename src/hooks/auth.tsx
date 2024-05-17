@@ -7,7 +7,12 @@ interface UserProps {
   name: string
   email: string
   is_active: boolean
-  avatar: string | null
+  avatar: {
+    id: number
+    high: string
+    medium: string
+    low: string
+  } | null
   type: string
   created: string
   modified: string
@@ -51,6 +56,8 @@ function AuthProvider({ children }: AuthContextProviderProps) {
       );
 
       const { user, tokens } = response.data;
+
+      console.log({ user, tokens })
 
       localStorage.setItem("@applogin:user", JSON.stringify(user));
       localStorage.setItem("@applogin:token", tokens.access);
