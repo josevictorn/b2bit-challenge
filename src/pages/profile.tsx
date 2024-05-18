@@ -31,7 +31,7 @@ export function Profile() {
       <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl space-y-6">
         <header className="flex flex-col justify-center items-center gap-2">
           <h2 className="text-sm font-semibold leading-6 text-gray-900">Profile picture</h2>
-          <img src={user.avatar ? user.avatar.low : avatarPlaceholder} className="h-14 w-14 rounded-lg object-cover" alt={`Avatar de ${user.name}`} />
+          <img src={user?.avatar ? user.avatar.low : avatarPlaceholder} className="h-14 w-14 rounded-lg object-cover" alt={`Avatar de ${user?.name}`} />
         </header>
 
         <main className="space-y-4">
@@ -41,7 +41,7 @@ export function Profile() {
             </h2>
                     
             <p className="block w-full rounded-md border-0 py-2 px-3 bg-zinc-100 text-gray-900 text-xs font-normal sm:leading-6">
-              {user.name}
+              {user?.name}
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export function Profile() {
             </h2>
                     
             <p className="block w-full rounded-md border-0 py-2 px-3 bg-zinc-100 text-gray-900 text-xs font-normal sm:leading-6">
-              {user.email}
+              {user?.email}
             </p>
           </div>
         </main>

@@ -20,8 +20,8 @@ interface UserProps {
 }
 
 interface dataTypes {
-  user: UserProps,
-  token: string
+  user: UserProps | null,
+  token: string | null
 }
 
 interface SignInRequestProps {
@@ -36,13 +36,13 @@ interface AuthContextProviderProps {
 interface AuthContextType {
   SignIn: ({email, password}: SignInRequestProps) => void,
   SignOut: () => void,
-  user: UserProps
+  user: UserProps | null
 }
 
 const AuthContext = createContext({} as AuthContextType);
 
 function AuthProvider({ children }: AuthContextProviderProps) {
-  const [data, setData] = useState<dataTypes | Record<string, never>>({});
+  const [data, setData] = useState<dataTypes>({ user: null, token: null });
   
   async function SignIn({ email, password }: SignInRequestProps) {
     try {
@@ -56,8 +56,6 @@ function AuthProvider({ children }: AuthContextProviderProps) {
       );
 
       const { user, tokens } = response.data;
-
-      console.log({ user, tokens })
 
       localStorage.setItem("@applogin:user", JSON.stringify(user));
       localStorage.setItem("@applogin:token", tokens.access);
@@ -82,7 +80,8 @@ function AuthProvider({ children }: AuthContextProviderProps) {
     localStorage.removeItem("@applogin:user");
     localStorage.removeItem("@applogin:token");
 
-    setData({});
+    setData({ user: null, token: null });
+    api.defaults.headers.common['Authorization'] = undefined;
   }
 
 
