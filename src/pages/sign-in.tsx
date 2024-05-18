@@ -1,9 +1,10 @@
-import { Field, Form, Formik } from "formik"
+import { Form, Formik } from "formik"
 import * as Yup from 'yup';
 
 import b2bitLogo from "../assets/b2bit-logo.png"
 import { useAuth } from "../hooks/auth";
 import { Button } from "../components/button";
+import { Input } from "../components/input";
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Required'),
@@ -40,38 +41,33 @@ export function SignIn() {
                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                     E-mail
                   </label>
-                  <div className="mt-2">
-                    <Field
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      placeholder="example@email.com"
-                      required
-                      className="block w-full rounded-md border-0 py-2 px-3 outline-none bg-zinc-100 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 text-sm sm:leading-6"
-                    />
-                  </div>
+                  
+                  <Input 
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder="example@email.com"
+                    required 
+                  />
+
                   {errors.email && touched.email ? <span className="text-red-500 text-xs font-semibold">{errors.email}</span> : null}
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                      Password
-                    </label>
-                    
-                  </div>
-                  <div className="mt-2">
-                    <Field
-                      id="password"
-                      name="password"
-                      type="password"
-                      autoComplete="current-password"
-                      placeholder="******"
-                      required
-                      className="block w-full rounded-md border-0 py-2 px-3 outline-none bg-zinc-100 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                    Password
+                  </label>
+
+                  <Input 
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    placeholder="******"
+                    required
+                  />
+
                   {errors.password && touched.password ? <span className="text-red-500 text-xs font-semibold">{errors.password}</span> : null}
                 </div>
 

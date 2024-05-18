@@ -8,7 +8,6 @@ describe('Button component', async () => {
     const buttonElement = getByRole('button')
     const buttonTextElement = getByText('Button')
 
-
     expect(buttonElement).toBeInTheDocument()
     expect(buttonTextElement).toBeInTheDocument()
   })
