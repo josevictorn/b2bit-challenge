@@ -77,7 +77,7 @@ Siga os passos abaixo para configurar o projeto localmente:
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/josevictorn/b2bit-challenge
+    git clone https://github.com/josevictorn/b2bit-challenge.git
     ```
 2. Navegue até o diretório do projeto:
     ```sh
