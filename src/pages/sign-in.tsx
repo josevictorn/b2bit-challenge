@@ -18,7 +18,7 @@ export function SignIn() {
 
   return (
     <div className="bg-[#FAFAFA] h-screen flex items-center justify-center">
-      <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl">
+      <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl animate-come">
 
         <header className="flex justify-center">
           <img src={b2bitLogo}  className="h-28" alt="" />

@@ -23,7 +23,7 @@ vi.mock('../services', () => ({
   },
 }));
 
-describe('AuthProvider', () => {
+describe('useAuth hook', () => {
   const TestComponent = () => {
     const { SignIn, SignOut, user } = useAuth();
     return (

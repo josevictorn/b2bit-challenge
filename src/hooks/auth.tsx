@@ -82,6 +82,8 @@ function AuthProvider({ children }: AuthContextProviderProps) {
 
     setData({ user: null, token: null });
     api.defaults.headers.common['Authorization'] = undefined;
+
+    toast.success("Deslogado com sucesso!")
   }
 
 

@@ -14,21 +14,19 @@ export function Profile() {
 
   return (
     <>
-    <div className="absolute flex w-full bg-white py-3 px-6 justify-end">
+    <div 
+      className="absolute flex w-full bg-white py-3 px-6 justify-end"
+    >
       <Button 
         title="Logout"
         onClick={handleLogout}
         size={56}
       />
-      {/* <button
-        onClick={handleLogout}
-        className="flex w-56 justify-center rounded-md bg-blue-950 px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-blue-900 disabled:bg-zinc-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-950"
-      >
-        Logout
-      </button> */}
     </div>
     <div className="bg-[#FAFAFA] h-screen flex items-center justify-center">
-      <div className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl space-y-6">
+      <div
+        className="bg-white bg-red px-5 py-8 w-full max-w-sm shadow-2xl rounded-2xl space-y-6 animate-come"
+      >
         <header className="flex flex-col justify-center items-center gap-2">
           <h2 className="text-sm font-semibold leading-6 text-gray-900">Profile picture</h2>
           <img src={user?.avatar ? user.avatar.low : avatarPlaceholder} className="h-14 w-14 rounded-lg object-cover" alt={`Avatar de ${user?.name}`} />
