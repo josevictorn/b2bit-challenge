@@ -9,6 +9,8 @@
 
 Bem-vindo(a) ao repositório do b2bit Auth! Este é um projeto desenvolvido como parte de um teste técnico para avaliação na empresa B2Bit. O objetivo principal é criar um sistema de login utilizando ReactJS, TypeScript e diversas outras tecnologias.
 
+https://github.com/josevictorn/b2bit-challenge/assets/71568404/5b7f5934-6fca-4705-bc9c-224bc5a73f3d
+
 ## Sumário
 
 - [Visão Geral](#visão-geral)
