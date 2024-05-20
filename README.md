@@ -68,7 +68,7 @@ Este projeto foi desenvolvido para demonstrar como criar um sistema de login fun
 
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-- Node.js (versão 14 ou superior)
+- Node.js (versão 20 ou superior)
 - npm (gerenciador de pacotes do Node)
 
 ## Instalação
@@ -100,6 +100,9 @@ Para executar o projeto em modo de desenvolvimento, utilize o seguinte comando:
 ```sh
 npm run dev
 ```
+
+O aplicativo estará disponível em http://localhost:5173.
+
 Você pode utilizar os seguintes dados de um usuário já cadastrado no sistema para testar a aplicação:
 ```json
 {
@@ -118,11 +121,11 @@ npm test
 ## Executando Testes E2E
 
 Para executar os testes end-to-end (E2E), siga os seguintes passos:
-1. Inicialize o ambiente de teste:
+1. Inicialize o ambiente de teste e deixe-o rodando:
     ```sh
     npm run dev:test
     ```
-2. Execute o Playwright:
+2. Em outro terminal execute o Playwright:
     ```sh
     npx playwright test
     ```
@@ -130,11 +133,12 @@ Para executar os testes end-to-end (E2E), siga os seguintes passos:
     ```sh
     npx playwright test --ui
     ```
+    Será aberto uma nova janela com o ambiente de teste do Playwright. Depois de iniciar o UI Mode, você verá uma lista de todos os arquivos de teste. Você pode executar todos os testes clicando no ícone de triângulo na barra lateral. Ou você também pode executar um único arquivo de teste, um bloco de testes ou um único teste passando o mouse sobre o nome e clicando no triângulo próximo a ele.
 
 ## Contato
 Para dúvidas ou sugestões, entre em contato através de:
 
-- [Email](josevictornascimento2016@email.com)
+- [Email](mailto:josevictornascimento2016@gmail.com)
 - [Linkedin](https://www.linkedin.com/in/jos%C3%A9-victor-nascimento-7983b2230/)
 
 ## Autor
