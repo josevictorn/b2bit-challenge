@@ -89,9 +89,13 @@ Siga os passos abaixo para configurar o projeto localmente:
     ```
 4. Crie os arquivos ```.env``` e ```.env.test``` seguindo a estrutura dos arquivos ```.env.example``` e ```.env.test.example``` presentes no projeto. Atribua o endereço da sua API à variável ```VITE_API_URL```.
 
-Você pode utilizar o seguinte endereço, de uma API real, para testar a aplicação:
+Você pode adicionar o seguinte valor, que é o endereço de uma API real, à variável ```VITE_API_URL``` no arquivo ```.env``` para testar a aplicação:
 ```.env
 VITE_API_URL='https://api.homologation.cliqdrive.com.br'
+```
+Porém, no arquivo ```.env.test``` siga a estrutura de ```.env.test.example``` e matenha a seguinte configuração:
+```.env
+VITE_API_URL='/'
 ```
 
 ## Executando o Projeto
@@ -129,7 +133,19 @@ Para executar os testes end-to-end (E2E), siga os seguintes passos:
     ```sh
     npx playwright test
     ```
-3. Execute os testes no modo de interface do usuário (UI Mode):
+3. Se lhe for retornardo algum erro você pode tentar reinstalar o Playwright:
+   ```sh
+    npm init playwright@latest
+    ```
+   Na instalação, você verá os seguintes prompts:
+   ```
+    Where to put your end-to-end tests? · tests
+    Add a GitHub Actions workflow? (y/N) · false
+    Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) · true
+    C:\b2bit-challenge\playwright.config.ts already exists. Override it? (y/N) » false
+    ```
+
+- Você também pode executar os testes no modo de interface do usuário (UI Mode): 
     ```sh
     npx playwright test --ui
     ```
